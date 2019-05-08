@@ -49,3 +49,14 @@ function mfnch_textdomain()
 	load_child_theme_textdomain('mfn-opts', get_stylesheet_directory() . '/languages');
 }
 add_action('after_setup_theme', 'mfnch_textdomain');
+
+/**
+* @snippet       Remove "Default Sorting" Dropdown @ WooCommerce Shop & Archive Pages
+* @how-to        Watch tutorial @ https://businessbloomer.com/?p=19055
+* @source        https://businessbloomer.com/?p=401
+* @author        Rodolfo Melogli
+* @compatible    Woo 3.5.2
+* @donate $9     https://businessbloomer.com/bloomer-armada/
+*/
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
